@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <title>Chat Room</title>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+        <script type="text/javascript" src="lib/axios/dist/axios.standalone.js"></script>
+        <script type="text/javascript" src="lib/CryptoJS/rollups/hmac-sha256.js"></script>
+        <script type="text/javascript" src="lib/CryptoJS/rollups/sha256.js"></script>
+        <script type="text/javascript" src="lib/CryptoJS/components/hmac.js"></script>
+        <script type="text/javascript" src="lib/CryptoJS/components/enc-base64.js"></script>
+        <script type="text/javascript" src="lib/url-template/url-template.js"></script>
+        <script type="text/javascript" src="lib/apiGatewayCore/sigV4Client.js"></script>
+        <script type="text/javascript" src="lib/apiGatewayCore/apiGatewayClient.js"></script>
+        <script type="text/javascript" src="lib/apiGatewayCore/simpleHttpClient.js"></script>
+        <script type="text/javascript" src="lib/apiGatewayCore/utils.js"></script>
+        <script type="text/javascript" src="apigClient.js"></script>
+        <script src="main.js"></script>
+        <link rel = "stylesheet" href = "https://www.w3schools.com/lib/w3.css">
+    </head>
+        
+    <body class="w3-dark-grey">
+
+                        
+ 
+                
+        <p class="w3-container w3-blue-grey">ChatBot</p>
+        <div class="w3-container" style="width: 100%">
+            <div class="w3-display-container" style="height: 300px;margin: 10">
+                <div class="w3-display-left" style="width: 70%; height: 100%; padding: 5px">
+                        <div id="response" class="w3-light-grey w3-card-8" style="width: 100%;height: 100%;resize: none;overflow: scroll"></div>
+                </div>
+                <div class="w3-display-right" style="width: 30%; height: 100%; padding: 5px">
+                     <table style="width: 100%;height: 100%;" border="0">
+                        
+                        
+                        
+                        <tr>
+                            <td style="border-radius: 5px;padding:10px;" class="w3-blue-grey">Current Online</td>
+                            <td style="text-align: right"><span id="userCounter">-</span></td>
+                        </tr>
+                        <tr>
+                                <td style="text-align: right;" colspan="2">
+                                                    
+                                    <span id="connectStatus"></span>
+                                                
+                                </td>
+                            </tr>
+                        <tr>
+                                <td style="text-align: center; padding: 10px" colspan="2">
+                                    <button class="w3-button w3-light-grey" onclick="clearMsg()">ALL CLEAR</button>
+                                </td>
+                        </tr>
+                        
+                     </table>
+                </div>
+                    
+            </div>
+            <hr/>
+            <div class="w3-display-container" style="width: 100%;height: 150; margin: 10; padding: 5">
+                <div class="w3-display-topleft w3-container" style="width: 65%; height: 100%; text-align: right">
+                        
+                        <textarea id="input" style="width: 100%;height: 70%;resize: none;" onfocus="if(value=='Enter Text...'){value=''}"
+    onblur="if (value ==''){value='Enter Text...'}">Enter Text...</textarea>
+                        <br/>
+                        <button class="w3-button w3-light-grey" style="height: 30%;" onclick="submitText()">SUBMIT</button>
+                </div>
+
+                <div class="w3-display-topright w3-container w3-blue-grey w3-large" style="width: 35%; height: 90%; text-align: left;">
+                        <form action="/demo/demo_form.asp">
+                        First name:<br>
+                        <input type="text" id="firstname" style="width: 70%;" maxlength="10">
+                        <br>
+                        Last name:<br>
+                        <input type="text" id="lastname" style="width: 70%;" maxlength="10">
+                        <br><br>
+                        </form>                        
+                </div>
+                
+            </div>
+            
+        </div>
+    </body>
+</html>
